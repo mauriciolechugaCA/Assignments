@@ -1,0 +1,84 @@
+/**
+* Mauricio Lechuga
+* Student Number 8952857
+*/
+
+body {
+    width: 100%;
+    max-width: 95vw;
+    margin: auto;
+    font: 18px "Helvetica", sans-serif;
+    padding: 1.5em;
+    background-color: #FCFBF0;
+}
+
+header, footer {
+    border: 5px solid #965434;
+    border-radius: 20px;
+    padding: 1.5em;
+    margin: 2em;
+}
+
+h1, h2 {
+    color: #122560;
+    font-variant: small-caps;
+}
+
+/* Descendant combinator selector
+    "All the paragraphs within <footer> */
+footer p {
+    color: #122560;
+}
+
+main {
+    float: left;
+    width: 60%;
+}
+
+aside {
+    float: right;
+    width: 30%;
+}
+
+main, aside {
+    padding: 0.5em;
+    margin: 0.75em;
+}
+
+footer {
+    clear: both;
+}
+
+/* Styling the class declared in the HTML file */
+.mainimg {
+    border: 5px solid #ECBE07;
+}
+
+figcaption {
+    font-style: bold;
+    font-variant: small-caps;
+}
+
+q {
+    font-family: cursive;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+ul li {
+    line-height: 1.75em;
+    list-style-type: none;
+}
+
+/* Child combinator selector
+    All the links <a> that are inside a <li> element */
+ul > li > a {
+    text-decoration: none;
+    color: #965434;
+}
+
+/* Pseudo-element selector
+    Inside <aside> change the color of all the <a> on hover */
+aside a:hover {
+    color: #ECBE07;
+}
