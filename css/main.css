@@ -16,7 +16,7 @@ header, footer {
     border: 5px solid #965434;
     border-radius: 20px;
     padding: 1.5em;
-    margin: 2em;
+    margin: 1.5em;
 }
 
 h1, h2 {
@@ -25,19 +25,20 @@ h1, h2 {
 }
 
 /* Descendant combinator selector
-    "All the paragraphs within <footer> */
+    "All the paragraphs within <footer>" */
 footer p {
     color: #122560;
+    font-size: 0.8em;
 }
 
 main {
     float: left;
-    width: 60%;
+    width: 65vw;
 }
 
 aside {
     float: right;
-    width: 30%;
+    width: 25vw;
 }
 
 main, aside {
@@ -66,7 +67,7 @@ q {
 }
 
 ul li {
-    line-height: 1.75em;
+    line-height: 2em;
     list-style-type: none;
 }
 
