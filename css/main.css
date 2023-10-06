@@ -27,7 +27,7 @@ h1, h2 {
 
 /* Descendant combinator selector
     "All the paragraphs within <footer>" */
-    "All the paragraphs within <footer>" */
+   
 footer p {
     color: #965434;
     font-size: 0.6em;
