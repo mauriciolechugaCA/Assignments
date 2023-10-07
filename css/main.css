@@ -8,7 +8,7 @@ body {
     max-width: 95vw;
     margin: auto;
     font: 18px "Helvetica", sans-serif;
-    padding: 1.5em;
+    padding: 0.5em;
     background-color: #FCFBF0;
 }
 
@@ -16,7 +16,6 @@ header, footer {
     border: 5px solid #965434;
     border-radius: 20px;
     padding: 1.5em;
-    margin: 1.5em;
     margin: 1.5em;
 }
 
@@ -27,7 +26,6 @@ h1, h2 {
 
 /* Descendant combinator selector
     "All the paragraphs within <footer>" */
-   
 footer p {
     color: #965434;
     font-size: 0.6em;
@@ -41,12 +39,11 @@ main {
 aside {
     float: right;
     width: 25vw;
-    width: 25vw;
 }
 
 main, aside {
-    padding: 0.5em;
-    margin: 0.75em;
+    padding: 25px;
+    margin: 15px;
 }
 
 footer {
