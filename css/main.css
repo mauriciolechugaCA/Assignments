@@ -4,19 +4,18 @@
 */
 
 body {
-    width: 100%;
     max-width: 95vw;
     margin: auto;
     font: 18px "Helvetica", sans-serif;
-    padding: 0.9em;
+    padding: 0.7em;
     background-color: #FCFBF0;
 }
 
 header, footer {
     border: 5px solid #965434;
     border-radius: 25px;
-    padding: 1.1em;
-    margin: 1.1em;
+    padding: 0.8em;
+    margin: 0.8em;
 }
 
 h1, h2 {
@@ -33,7 +32,7 @@ footer p {
 
 main {
     float: left;
-    width: 65vw;
+    width: 60vw;
 }
 
 aside {
