@@ -18,10 +18,26 @@
     </style>
 </head>
 <body>
+    <div class="grid">
         <header>
             <h1>Leonardo DaVinci</h1>
         </header>
 
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Media</a>
+                    <ul>
+                        <li><a href="gallery.html">Gallery</li></a>
+                        <li><a href="media.html">Videos</li></a>                     
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+     
+        </nav>
+
+        <!--------------------- This will change on every different page ---------------------->
         <main>
             <section>
                 <h2>Biography</h2>
@@ -32,32 +48,81 @@
             <section>
                 <h2>Images</h2>
                     <figure>
-                        <img class="mainimg" src="images/vitruvian.jpg" alt="An image of The Vitruvian Man by Leonardo DaVinci" width="75%" height="75%">
+                        <img class="mainimg" src="images/vitruvian.jpg" alt="An image of The Vitruvian Man by Leonardo DaVinci">
+                        <p>"Vitruvian Man" is a famous drawing by Leonardo da Vinci created around the year 1490. The illustration depicts a man in two superimposed positions with his arms and legs apart inside both a square and a circle. The drawing is accompanied by notes based on the work of the ancient Roman architect Vitruvius, from which the name "Vitruvian Man" is derived.
+                            The significance of the drawing lies in its exploration of the proportions of the human body and its relationship to geometry. Da Vinci sought to illustrate the ideal proportions of the human form as described by Vitruvius. The man in the drawing is positioned in such a way that his outstretched limbs touch both the circumference of the circle and the edges of the square.
+                            This iconic image is not only a study of anatomy but also a representation of the harmonious relationship between the human body and geometric principles. "Vitruvian Man" has become a symbol of the intersection between art, science, and mathematics, showcasing Leonardo da Vinci's interdisciplinary approach to understanding the world.
+                        </p>
                         <figcaption>The Vitruvian Man, circa 1485</figcaption>
                     </figure>
-                    <figure>
-                        <img class="mainimg" src="https://www.rct.uk/sites/default/files/collection-online/f/1/773158-1530528513.jpg" alt="A sketch made by Leonardo DaVinci of a horse" width="75%" height="75%">
-                        <figcaption>Leonardo DaVinci's horse in silverpoint, circa 1488</figcaption>
-                    </figure>
-            </section>
                 
+            </section>
+            
             <section>
                 <h2>Quotes</h2>
                     <q cite="https://www.brainyquote.com/authors/leonardo-da-vinci-quotes">Learning never exhausts the mind.</q>
             </section>
+
+            <section>
+                    <table>
+                        <caption>DaVinci's Work</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Year</th>
+                                <th scope="col">Medium</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mona Lisa (La Gioconda)</td>
+                                <td id="nowrap">1503-1506</td>
+                                <td>Oil on panel</td>
+                                <td>Iconic portrait known for the subject's enigmatic smile and detailed landscape background.</td>
+                            </tr>
+                            <tr>
+                                <td>The Last Supper (Il Cenacolo)</td>
+                                <td id="nowrap">1495-1498</td>
+                                <td>Fresco</td>
+                                <td>Depicts the moment Jesus announces betrayal, capturing the reactions of his disciples.</td>
+                            </tr>
+                            <tr>
+                                <td>Vitruvian Man</td>
+                                <td id="nowrap">c. 1490</td>
+                                <td>Pen and ink with wash over metalpoint on paper</td>
+                                <td>Illustration exploring the proportions of the human body within a square and a circle.</td>
+                            </tr>
+                            <tr>
+                                <td>Annunciation</td>
+                                <td id="nowrap"> c. 1472-1475</td>
+                                <td>Oil on wood</td>
+                                <td>Depicts the angel Gabriel announcing to the Virgin Mary that she will conceive the Son of God.</td>
+                            </tr>
+                                <td>Lady with an Ermine</td>
+                                <td id="nowrap">c. 1489-1490</td>
+                                <td>Oil on wood</td>
+                                <td>Portrait of Cecilia Gallerani, holding an ermine, showcasing da Vinci's mastery of capturing expression.</td>
+                            </tr>
+                        </tbody>
+                    </table>            
+            </section>
         </main>
-        
+        <!--===============================================================================-->
+
         <aside>
-            <h2>Additional Information</h2>
-            <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Leonardo_da_Vinci" target="_blank">Wikipedia</a></li>
-                <li><a href="http://www.catalogo.bibliotecaleonardiana.it/" target="_blank">Biblioteca Leonardiana</a></li>
-                <li><a href="https://www.nationalgallery.org.uk/artists/leonardo-da-vinci" target="_blank">National Gallery</a></li>
-            </ul>
+            <section>
+                <h2>Additional Information</h2>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Leonardo_da_Vinci" target="_blank">Wikipedia</a></li>
+                    <li><a href="http://www.catalogo.bibliotecaleonardiana.it/" target="_blank">Biblioteca Leonardiana</a></li>
+                    <li><a href="https://www.nationalgallery.org.uk/artists/leonardo-da-vinci" target="_blank">National Gallery</a></li>
+                </ul>
+            </section>
         </aside>
-        
         <footer>
             <p>&copy; Mauricio Lechuga 2023</p>
         </footer>
+    </div>    
 </body>
 </html>

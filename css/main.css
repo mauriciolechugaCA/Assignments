@@ -2,83 +2,691 @@
 * Mauricio Lechuga
 * Student Number 8952857
 */
+/*******************************************
+Global Grid layout and responsive queries
+*******************************************/
+.grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+    "header   header"
+    "nav      nav"
+    "main     aside"
+    "main     ....."
+    "footer   footer";
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.galleryitem:nth-child(2n+1) img {
+    clip-path: polygon(7% 3%,99% 4%,97% 99%,1% 100%);
+}
+
+.galleryitem:nth-child(2n+2) img {
+    clip-path: polygon(3% 2%,96% 4%,98% 99%,2% 100%);
+}
+
+.galleryitem:nth-child(3n+3) img {
+    clip-path: polygon(2% 5%,92% 0%,98% 99%,0% 97%);
+}
+
+.galleryitem {
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.galleryitem img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+html {
+    font: 20px "Helvetica", sans-serif;
+    padding: 1rem 1rem;
+}
 
 body {
-    max-width: 95vw;
-    margin: auto;
-    font: 18px "Helvetica", sans-serif;
-    padding: 0.7em;
+    max-width: 100vw;
     background-color: #FCFBF0;
 }
 
-header, footer {
-    border: 5px solid #965434;
-    border-radius: 25px;
-    padding: 0.8em;
-    margin: 0.8em;
+header {
+    grid-area: header;
+    font-size: 2.5rem;
 }
 
-h1, h2 {
+header, footer {
+    border: 7px solid #965434;
+    border-radius: 30px;
+    text-align: center;
+    background: linear-gradient( to left top, #965434, #122560);
+}
+
+h1 {
+    color: #FEFEFE;
+    font-variant: small-caps;
+    margin: 2rem;
+}
+
+h2 {
     color: #122560;
     font-variant: small-caps;
+    margin: 0 0;
+    font-size: 2rem;
 }
 
-/* Descendant combinator selector
-    "All the paragraphs within <footer>" */
-footer p {
-    color: #965434;
-    font-size: 0.6em;
+nav {
+    grid-area: nav;
+    border: 0.2rem solid #965434;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0.75rem;
+}
+
+nav a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #122560;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul a:hover {
+    color:#965434;
+}
+
+nav > ul > li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li ul {
+    display: none;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul {
+    width: 150%;
+    position: absolute;
+    z-index: 999;
+    text-align: left;
+    background-color: #965434;
+    box-shadow: 0 0 5px #000;
+}
+
+nav ul li ul li a {
+    color: #FEFEFE;
+    padding: 0.5rem;
+    display: block;
+}
+
+nav ul li ul li:hover a:hover {
+    color: #ECBE07;
+    background-color: #122560;
 }
 
 main {
-    float: left;
-    width: 60vw;
+    grid-area: main;
+    min-height: min-content;
 }
 
 aside {
-    float: right;
-    width: 25vw;
+    grid-area: aside;
+    background-image: url(../images/davinci-lastsupper.jpg);
+    background-position: center;
+    
+    /****************************************
+    Found this trick to add an overlay
+    on top of image to improve readability
+    ****************************************/
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6); 
 }
 
-main, aside {
-    padding: 0.5em;
-    margin: 0.7em;
+aside h2{
+    padding: 1.25rem 1.25rem 0 1.25rem;
+    text-align: left;
+    color: #ECBE07;
 }
 
-footer {
-    clear: both;
-}
-
-/* Styling the class declared in the HTML file */
-.mainimg {
-    border: 5px solid #ECBE07;
-}
-
-figcaption {
-    font-style: bold;
-    font-variant: small-caps;
-}
-
-q {
-    font-family: cursive;
-    font-style: italic;
-    font-size: 1.2em;
-}
-
-ul li {
-    line-height: 2em;
+aside ul {
     list-style-type: none;
 }
 
-/* Child combinator selector
-    All the links <a> that are inside a <li> element */
-ul > li > a {
+aside ul a {
     text-decoration: none;
-    color: #965434;
+    color: #FEFEFE;
 }
 
-/* Pseudo-element selector
-    Inside <aside> change the color of all the <a> on hover */
-aside a:hover {
+aside ul a:hover {
     color: #ECBE07;
+}
+
+aside ul li {
+    line-height: 2rem;
+}
+
+footer {
+    grid-area: footer;
+}
+
+footer p {
+    color: #FEFEFE;
+    font-size: 0.85rem;
+}
+
+section {
+    margin: 0.75rem 0rem 1.5rem 0rem;
+}
+
+figure {
+    margin-left: 0px;
+}
+
+.mainimg {
+    border: 0.25rem solid #ECBE07;
+    min-width: 25rem;
+    width: 80%;
+    shape-outside: polygon(0px 0px, 76.55% 0%, 79.38% 29px, 82.03% 11.85%, 84.05% 16.92%, 85.78% 22.67%, 85.39% 30.72%, 83.33% 34.61%, 79.94% 38.48%, 76.84% 42.17%, 75.55% 45.93%, 77.6% 46.98%, 82.55% 43.9%, 86.48% 45.17%, 87.74% 50.66%, 87.43% 61.08%, 82.92% 65.45%, 76.52% 65.89%, 70.44% 67.61%, 66.92% 68.15%, 64.08% 70.79%, 61.98% 76.33%, 61.45% 83.91%, 62.19% 91.11%, 64.39% 100%, 0px 100%);
+    clip-path: polygon(0px 0px, 74.01% 0.54%, 77.64% 5.15%, 80.41% 10.5%, 82.9% 16.08%, 84.42% 19.97%, 85.64% 23.09%, 85.94% 26.08%, 85.61% 29.05%, 84.63% 32.09%, 83.03% 34.42%, 81.09% 36.37%, 79.02% 38.65%, 76.92% 41.8%, 75.9% 44.5%, 75.95% 47.89%, 77.36% 48.73%, 78.92% 48.34%, 81.39% 46.6%, 84.13% 45.74%, 86.6% 47.86%, 87.48% 50.03%, 87.44% 53.43%, 87.48% 56.82%, 86.74% 59.46%, 84.76% 62.03%, 81.48% 62.96%, 77.71% 63.75%, 73.04% 65.15%, 67.93% 65.92%, 64.17% 69.27%, 61.32% 75.2%, 60.7% 84.62%, 61.43% 93.02%, 62.31% 100%, 0px 100%);
+    float: left;
+}
+
+figcaption {
+    font-style: italic;
+    font-variant: small-caps;
+    text-align: left;
+    clear: left;
+}
+
+q {
+    font-family: monospace;
+    font-size: 2.5rem;
+}
+
+/************* 
+Table styling
+*************/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 0.15rem solid #ECBE07;
+    overflow: hidden;
+}
+
+caption {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #122560;
+    background-color: #FCFBF0;
+    padding-bottom: 1rem;
+    text-align: left;
+}
+
+/******************************
+Created this ID to style only
+the cells containing the year 
+******************************/
+#nowrap {
+    white-space: nowrap;
+}
+
+thead tr {
+    font-size: x-large;
+}
+
+tbody tr {
+    font-size: 1rem;
+}
+
+thead th {
+    background-color: #FCFBF0;
+}
+
+tr {
+    border-bottom: 0.15rem solid #965434;
+}
+
+th {
+    padding: 0.5rem 0.5 rem;
+}
+
+td {
+    padding: 1rem 1rem;
+}
+ tbody tr:hover {
+    background-color: rgb(237, 191, 7, 0.3);
+ }
+
+ tbody td, tbody th {
+    position: relative;
+ }
+
+ tbody td:hover::after,
+ tbody th:hover::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(237, 191, 7, 0.3);
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+ }
+
+.youtubevideo {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/*********************** 
+* Contact form styling *
+***********************/
+fieldset legend {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.formcontainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    }
+    
+.fname {
+    grid-area: 1 / 1 / 2 / 3; 
+    font-weight: bolder;
+    align-self: center;
+    justify-self: center;
+}
+
+.lname {
+    grid-area: 1 / 3 / 2 / 5;
+    font-weight: bolder;
+    align-self: center;
+    justify-self: center;
+}
+
+.email {
+    grid-area: 2 / 1 / 3 / 3; 
+    align-self: center;
+    justify-self: center;
+
+}
+
+.phone { 
+    grid-area: 2 / 3 / 3 / 5; 
+    align-self: center;
+    justify-self: center;
+
+}
+
+.birthday { 
+    grid-area: 3 / 1 / 4 / 3; 
+    align-self: center;
+    justify-self: center;
+
+}
+
+.painting {
+    grid-area: 3 / 3 / 4 / 5; 
+    align-self: center;
+    justify-self: center;
+
+}
+
+#painting {
+    border: none;
+    background-color: #ecbe075d;
+}
+
+.clear { 
+    grid-area: 4 / 2 / 5 / 4;
+    align-self: center;
+    justify-self: center; 
+}
+
+.clear input[type=reset] {
+    font-size: 1.2rem;
+    font-variant: small-caps;
+    background-color: #ECBE07;
+    border: 0.25rem solid #122560;
+    border-radius: 20px;
+    padding: 0.75rem;
+}
+
+.clear input[type=reset]:hover {
+    background-color: #122560;
+    border: 0.25rem solid #ECBE07;
+    border-radius: 20px;
+    padding: 0.5rem;
+    color: #ECBE07;
+}
+
+.submit { 
+    grid-area: 5 / 2 / 6 / 4;
+    align-self: center;
+    justify-self: center;
+    margin-top: 0.75rem;
+
+}
+
+.submit input[type=submit] {
+    font-size: 1.2rem;
+    font-variant: small-caps;
+    background-color: #ECBE07;
+    border: 0.25rem solid #122560;
+    border-radius: 20px;
+    padding: 0.5rem;
+
+}
+
+.submit input[type=submit]:hover {
+    background-color: #122560;
+    border: 0.25rem solid #ECBE07;
+    border-radius: 20px;
+    padding: 0.5rem;
+    color: #ECBE07;
+}
+
+label {
+    font-size: 1.25rem;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=date] {
+    border: none;
+    background-color: #ecbe075d ;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 7fr 3fr;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    }
+
+    header, footer {
+        width: 90vw;
+        font-size: 1.25rem;
+        border: 0px solid #965434;
+        border-radius: 30px;
+        text-align: center;
+        background: linear-gradient( to left top, #965434, #122560);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.85rem;
+    }
+
+    q {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        grid-area: nav;
+        width: 90vw;
+        border: 0.2rem solid #965434;
+        border-radius: 20px;
+        text-align: center;
+        padding: 0.2rem 0;
+    }
+    
+    nav a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #122560;
+        text-decoration: none;
+        padding: 0.35rem;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav ul a:hover {
+        color:#965434;
+    }
+    
+    nav > ul > li {
+        display: inline-block;
+        position: relative;
+    }
+    
+    nav ul li ul {
+        display: none;
+    }
+    
+    nav ul li:hover ul {
+        display: block;
+    }
+    
+    nav ul li ul {
+        width: 150%;
+        position: absolute;
+        z-index: 999;
+        text-align: left;
+        background-color: #965434;
+        box-shadow: 0 0 5px #000;
+    }
+    
+    nav ul li ul li a {
+        color: #FEFEFE;
+        padding: 0.5rem;
+        display: block;
+    }
+    
+    nav ul li ul li:hover a:hover {
+        color: #ECBE07;
+        background-color: #122560;
+    }
+
+    aside {
+        grid-area: aside;
+        background-image: url(../images/davinci-baby.jpg);
+        background-position: center;
+        width: 90vw;
+        
+        /****************************************
+        Found this trick to add an overlay
+        on top of image to improve readability
+        ****************************************/
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6); 
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 7fr 3fr;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    }
+
+    header, footer {
+        width: 90vw;
+        font-size: 0.5rem;
+        border: 0px solid #965434;
+        border-radius: 30px;
+        text-align: center;
+        background: linear-gradient( to left top, #965434, #122560);
+    }
+
+    header {
+
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    aside h2 {
+        font-size: 1.35rem;
+    }
+
+    q {
+        font-size: 1rem
+    }
+
+    main {
+        width: 90vw;
+    }
+
+    section {
+        width: 90vw;
+    }
+
+    .mainimg {
+        width: 75vw;
+        min-width: 0px;
+    }
+
+    aside {
+        grid-area: aside;
+        background-image: url(../images/davinci-horse.jpg);
+        background-position: center;
+        width: 90vw;
+        
+        /****************************************
+        Found this trick to add an overlay
+        on top of image to improve readability
+        ****************************************/
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6); 
+    }
+
+    .formcontainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        }
+
+        .fname {
+            grid-area: 1 / 1 / 2 / 2; 
+            font-weight: bolder;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+        
+        .lname {
+            grid-area: 2 / 1 / 3 / 2;
+            font-weight: bolder;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+        
+        .email {
+            grid-area: 3 / 1 / 4 / 2; 
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+        
+        .phone { 
+            grid-area: 4 / 1 / 5 / 2; 
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+        
+        .birthday { 
+            grid-area: 5 / 1 / 6 / 2; 
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+        
+        .painting {
+            grid-area: 6 / 1 / 7 / 2; 
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+        
+        #painting {
+            border: none;
+            background-color: #ecbe075d;
+        }
+        
+        .clear { 
+            grid-area: 7 / 1 / 8 / 2;
+            align-self: center;
+            justify-self: center; 
+        }
+        
+        .clear input[type=reset] {
+            font-size: 1.2rem;
+            font-variant: small-caps;
+            background-color: #ECBE07;
+            border: 0.25rem solid #122560;
+            border-radius: 20px;
+            padding: 0.75rem;
+        }
+        
+        .submit { 
+            grid-area: 8 / 1 / 9 / 2;
+            align-self: center;
+            justify-self: center;
+        }
+        
+        .submit input[type=submit] {
+            font-size: 1.2rem;
+            font-variant: small-caps;
+            background-color: #ECBE07;
+            border: 0.25rem solid #122560;
+            border-radius: 20px;
+            padding: 0.5rem;
+        }
+        
+        label {
+            font-size: 1.25rem;
+        }
+        
+        input[type=text], input[type=email], input[type=tel], input[type=date] {
+            border: none;
+            background-color: #ecbe075d ;
+        }
+        
+
 }
