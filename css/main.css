@@ -545,10 +545,6 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
         background: linear-gradient( to left top, #965434, #122560);
     }
 
-    header {
-
-    }
-
     h1 {
         font-size: 1.5rem;
         margin: 1rem;
