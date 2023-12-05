@@ -49,6 +49,11 @@ Global Grid layout and responsive queries
     object-fit: cover;
 }
 
+.gallery-title {
+    font-size: 2rem;
+    text-align: center;
+}
+
 html {
     font: 20px "Helvetica", sans-serif;
     padding: 1rem 1rem;
@@ -523,6 +528,12 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
         ****************************************/
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6); 
     }
+
+    .gallery-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
 }
 
 @media (max-width: 750px) {
@@ -605,6 +616,12 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
         ****************************************/
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6); 
     }
+
+    .gallery-title {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+    
 
     .formcontainer {
         display: grid;
