@@ -19,7 +19,7 @@ Global Grid layout and responsive queries
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
+    grid-gap: 0.5rem;
     align-items: center;
     justify-content: center;
 }
@@ -65,8 +65,8 @@ header {
 }
 
 header, footer {
-    border: 7px solid #965434;
-    border-radius: 30px;
+    border: 0.5rem solid #965434;
+    border-radius: 1rem;
     text-align: center;
     background: linear-gradient( to left top, #965434, #122560);
 }
@@ -87,7 +87,7 @@ h2 {
 nav {
     grid-area: nav;
     border: 0.2rem solid #965434;
-    border-radius: 20px;
+    border-radius: 0.75rem;
     text-align: center;
     padding: 0.75rem;
 }
@@ -129,7 +129,7 @@ nav ul li ul {
     z-index: 999;
     text-align: left;
     background-color: #965434;
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 0.5rem #000;
 }
 
 nav ul li ul li a {
@@ -310,8 +310,8 @@ fieldset legend {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
     }
     
 .fname {
@@ -372,15 +372,15 @@ fieldset legend {
     font-variant: small-caps;
     background-color: #ECBE07;
     border: 0.25rem solid #122560;
-    border-radius: 20px;
+    border-radius: 0.7rem;
     padding: 0.75rem;
 }
 
 .clear input[type=reset]:hover {
     background-color: #122560;
     border: 0.25rem solid #ECBE07;
-    border-radius: 20px;
-    padding: 0.5rem;
+    border-radius: 0.7rem;
+    padding: 0.75rem;
     color: #ECBE07;
 }
 
@@ -397,7 +397,7 @@ fieldset legend {
     font-variant: small-caps;
     background-color: #ECBE07;
     border: 0.25rem solid #122560;
-    border-radius: 20px;
+    border-radius: 0.7rem;
     padding: 0.5rem;
 
 }
@@ -405,7 +405,7 @@ fieldset legend {
 .submit input[type=submit]:hover {
     background-color: #122560;
     border: 0.25rem solid #ECBE07;
-    border-radius: 20px;
+    border-radius: 0.7rem;
     padding: 0.5rem;
     color: #ECBE07;
 }
@@ -433,8 +433,8 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
     header, footer {
         width: 90vw;
         font-size: 1.25rem;
-        border: 0px solid #965434;
-        border-radius: 30px;
+        border: 0.3rem solid #965434;
+        border-radius: 1rem;
         text-align: center;
         background: linear-gradient( to left top, #965434, #122560);
     }
@@ -525,14 +525,15 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 750px) {
     .grid {
         grid-template-columns: 7fr 3fr;
+        row-gap: 0.5rem;
         grid-template-areas: 
         "header"
         "nav"
-        "main"
         "aside"
+        "main"
         "footer";
     }
 
@@ -543,6 +544,23 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
         border-radius: 30px;
         text-align: center;
         background: linear-gradient( to left top, #965434, #122560);
+    }
+
+    nav {
+        grid-area: nav;
+        width: 90vw;
+        border: 0rem solid #965434;
+        border-radius: 20px;
+        text-align: center;
+        padding: 0.1rem 0;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #122560;
+        text-decoration: none;
+        padding: 0.35rem;
     }
 
     h1 {
@@ -559,7 +577,7 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
     }
 
     q {
-        font-size: 1rem
+        font-size: 1.5rem
     }
 
     main {
