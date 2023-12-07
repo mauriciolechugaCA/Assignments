@@ -50,7 +50,7 @@ Global Grid layout and responsive queries
 }
 
 .gallery-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -79,7 +79,8 @@ header, footer {
 h1 {
     color: #FEFEFE;
     font-variant: small-caps;
-    margin: 2rem;
+    font-size: 3.5rem;
+    margin: 1.5rem;
 }
 
 h2 {
@@ -424,7 +425,7 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
     background-color: #ecbe075d ;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
     .grid {
         grid-template-columns: 7fr 3fr;
         grid-template-areas: 
@@ -434,6 +435,14 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
         "aside"
         "footer";
     }
+    
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+    }    
 
     header, footer {
         width: 90vw;
@@ -536,7 +545,7 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
     
 }
 
-@media (max-width: 750px) {
+@media (max-width: 500px) {
     .grid {
         grid-template-columns: 7fr 3fr;
         row-gap: 0.5rem;
@@ -548,10 +557,18 @@ input[type=text], input[type=email], input[type=tel], input[type=date] {
         "footer";
     }
 
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+    }    
+
     header, footer {
         width: 90vw;
         font-size: 0.5rem;
-        border: 0rem solid #965434;
+        border: 0.25rem solid #965434;
         border-radius: 1rem;
         text-align: center;
         background: linear-gradient( to left top, #965434, #122560);
